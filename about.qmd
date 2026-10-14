@@ -1,13 +1,35 @@
+
 ---
-title: "About"
+title: "About me"
 image: profile.jpg
 about:
   template: jolla
+  image-shape: round
   links:
     - icon: github
-      text: Github
-      href: https://github.com/etc5523-2022
+      text: GitHub
+      href: https://github.com/vnay0004
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/vaishnav-nayak-910225191/
+    - icon: envelope
+      text: Email
+      href: mailto:vnay0004@student.monash.edu
 
 ---
 
-This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
+Hi, I'm **Vaishnav Nayak**, a Master of Business Analytics student at Monash University in Melbourne. I enjoy turning data into clear, practical stories that people outside data roles can understand and act on.
+
+Before Monash, I completed a B.Tech in Computer Science and Engineering at REVA University, Bengaluru. During my degree, I was the Vice President and a Founding Member of the FACE Forum, where I organised events ranging from technical, sports, theatre and music to community outreach. After graduating, I worked as a Product Technical Analyst at Zycus, where I worked with clients on procurement software, gathered requirements and ran training sessions on new releases. These roles taught me that good work only matters if it's communicated well, whether that's to a room full of students or a client.
+
+Outside study, I love playing football, basketball, pickleball and CrossFit, and I've volunteered with Spark A Foundation mentoring underprivileged children.
+
+## Skills
+
+**Data & analytics:** R (tidyverse, ggplot2), SQL, Excel, Quarto
+
+**Tools:** Git & GitHub, Canva
+
+**Certifications:** Google Data Analytics Professional Certificate
+
+**Languages:** English, Hindi, Odia

@@ -1,0 +1,163 @@
+---
+title: "Fewer infections per patient, yet Germany loses more healthy years"
+subtitle: "What a study of hospital infections in Germany and Europe reveals"
+author: "Vaishnav Nayak"
+date: "2026-10-14"
+categories: [health, hospitals, Europe]
+bibliography: references.bib
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+
+# Colours (match the site theme)
+col_germany <- "#b5482a"
+col_eu      <- "#5c6670"
+col_link    <- "#d9d4c7"
+```
+
+Patients in German hospitals were less likely to pick up an infection than the European average. Yet, for every 100,000 people, Germany lost more healthy years to these infections: 308 versus 290.
+
+## The puzzle
+
+When you go into hospital, there is a small chance you will catch an infection that you did not have when you arrived. Doctors call these **healthcare-associated infections**. They include pneumonia, urinary tract infections and infections of a surgical wound. Most people recover, but some become seriously ill and some die.
+
+To compare harm fairly, researchers use a measure called **healthy years lost**. It adds up the years people lose by dying early and the years they spend living with illness. One healthy year lost is one year of full health that someone did not get to live.
+
+This post answers two questions:
+
+1. **Which hospital infections cause the most harm?**
+2. **How can Germany have fewer infections per patient but more harm overall?**
+
+## Where the numbers come from
+
+The figures come from a study by @zacher2019, published in the European public-health journal *Eurosurveillance*. The researchers used hospital surveys from 2011 and 2012, in which staff checked every patient on a single day for infections picked up in hospital. They compared a representative sample of German hospitals with the average across the European Union and European Economic Area (EU/EEA).
+
+The study covers five common hospital infections. The researchers built a free tool that turns these one-day snapshots into yearly estimates of cases, deaths and healthy years lost.
+
+## Not all infections are equally harmful
+
+@tbl-burden shows the estimated yearly toll in Germany. The most common infection is not the most harmful one.
+
+```{r}
+#| label: tbl-burden
+#| tbl-cap: "Estimated hospital infections in Germany each year (2011), sorted from most to least harmful. Source: Zacher et al. (2019)."
+
+# Numbers from Table 1 of Zacher et al. (2019), sorted by healthy years lost
+burden <- data.frame(
+  Infection = c("Pneumonia", "Urinary tract infection", "Bloodstream infection",
+                "Surgical wound infection", "C. difficile (gut) infection"),
+  Cases  = c(106586, 214150, 26976, 93222, 36002),
+  Deaths = c(3968, 3664, 3905, 2328, 1917),
+  DALYs  = c(69508, 66701, 58350, 28842, 20890)
+)
+
+# Share of all cases and of all healthy years lost (totals from the study)
+burden$Share_cases <- paste0(round(burden$Cases / 478222 * 100), "%")
+burden$Share_dalys <- paste0(round(burden$DALYs / 248920 * 100), "%")
+
+# format() adds thousands commas so the numbers are easy to read
+burden$Cases  <- format(burden$Cases, big.mark = ",")
+burden$Deaths <- format(burden$Deaths, big.mark = ",")
+
+knitr::kable(
+  burden[, c("Infection", "Cases", "Deaths", "Share_cases", "Share_dalys")],
+  col.names = c("Infection", "Cases per year", "Deaths per year",
+                "Share of all cases", "Share of healthy years lost"),
+  align = c("l", "r", "r", "r", "r"),
+  row.names = FALSE
+)
+```
+
+Urinary tract infections are the most common, making up almost half of all cases (45%). But they are usually mild, so they account for only about a quarter of healthy years lost (27%).
+
+Pneumonia and bloodstream infections are the opposite. Together they are only 28% of cases, but they cause 51% of all healthy years lost. A bloodstream infection is rare, yet it is one of the deadliest.
+
+## Germany versus Europe
+
+@fig-compare compares Germany with the EU/EEA average for each infection, per 100,000 people.
+
+```{r}
+#| label: fig-compare
+#| fig-cap: "Healthy years lost per 100,000 people each year, Germany compared with the EU/EEA average, 2011–12. Source: Zacher et al. (2019)."
+#| fig-alt: "Bar chart of five hospital infections. Germany loses more healthy years than the EU/EEA average to urinary tract and C. difficile infections, and fewer to pneumonia."
+#| fig-width: 8
+#| fig-height: 4.5
+
+# Numbers from Table 2 of Zacher et al. (2019)
+daly_data <- data.frame(
+  Infection = rep(c("Pneumonia", "Urinary tract", "Bloodstream",
+                    "Surgical wound", "C. difficile (gut)"), times = 2),
+  Region = rep(c("Germany", "EU/EEA average"), each = 5),
+  DALYs  = c(86.1, 82.6, 72.2, 35.7, 25.9,
+             109.8, 57.1, 76.2, 35.1, 10.0)
+)
+
+# keep the infections and regions in the order we want
+daly_data$Infection <- factor(daly_data$Infection,
+  levels = rev(c("Pneumonia", "Urinary tract", "Bloodstream",
+                 "Surgical wound", "C. difficile (gut)")))
+daly_data$Region <- factor(daly_data$Region,
+  levels = c("EU/EEA average", "Germany"))
+
+ggplot(daly_data, aes(x = DALYs, y = Infection, fill = Region)) +
+  geom_col(position = "dodge") +
+  geom_text(aes(label = DALYs), position = position_dodge(width = 0.9),
+            hjust = -0.2, size = 3.2) +
+  scale_fill_manual(values = c("Germany" = "#b5482a", "EU/EEA average" = "grey70"),
+                    breaks = c("Germany", "EU/EEA average")) +
+  xlim(0, 125) +
+  labs(title = "Germany loses more healthy years to urinary and gut infections",
+       x = "Healthy years lost per 100,000 people", y = NULL, fill = NULL) +
+  theme_minimal() +
+  theme(legend.position = "top")
+```
+
+Two infections stand out. Germany loses far more healthy years than the European average to **urinary tract infections** (83 versus 57) and to ***C. difficile*** **gut infections** (26 versus 10). It does better on **pneumonia** (86 versus 110). The other two infections are close to the average.
+
+Added together, Germany loses about 308 healthy years per 100,000 people each year, compared with 290 across the EU/EEA.
+
+## Why would safer hospitals lead to more harm?
+
+The researchers point to how often Germans go to hospital. Germany has more hospital beds per person than most European countries, and a larger share of its population is admitted to hospital each year.
+
+Think of it like this: if each hospital stay carries a slightly smaller risk, but many more people have a hospital stay, the total number of people harmed can still be higher. The study does not test this explanation directly, but it fits the pattern in the data.
+
+::: {.finding}
+Lower risk for each patient does not guarantee less harm overall. How many people go to hospital matters too.
+:::
+
+
+## So, what are the answers?
+- **Which hospital infections cause the most harm?** Pneumonia and bloodstream infections. They are less common than urinary tract infections but much more likely to be serious or fatal (@tbl-burden).
+- **How can Germany have fewer infections per patient but more harm overall?** Germany has more hospital stays per person. More stays mean more chances for infection, even when each stay is a little safer. The extra harm comes mainly from urinary tract and *C. difficile* infections (@fig-compare).
+
+::: {.callout-note}
+## What this data can't tell us
+These numbers are **estimates, not counts**. They are built from a one-day snapshot of hospital patients, scaled up to a whole year with a computer model, so the true values could be somewhat higher or lower. The data are also from 2011–12, so hospitals today may look different. And the comparison assumes German patients were about as sick as patients elsewhere in Europe.
+:::
+
+## The bottom line
+
+We started with a puzzle: how can a country with fewer infections per hospital patient lose more healthy years to those infections? The answer is scale. Germany's hospitals were slightly safer per patient, but Germany puts more people through hospital, so the total harm was higher: 308 versus 290 healthy years lost per 100,000 people.
+
+The type of infection matters too. Common, mild infections such as urinary tract infections make up most cases, but rarer, more serious infections such as pneumonia and bloodstream infections cause half of the harm. This matches earlier European research, which found that hospital infections together cause more harm than many better-known infectious diseases [@cassini2016].
+
+For anyone thinking about hospital safety, the lesson is simple: look at both **how risky each hospital stay is** and **how many hospital stays there are**.
+
+::: {.methods-note}
+**About the data.** Estimates come from the German national point prevalence survey (2011) and the European Centre for Disease Prevention and Control's EU/EEA survey (2011–12). The researchers' tool, BHAI, converts the share of patients with an infection on the survey day into yearly new cases, spreads them across age and sex groups, and applies published information on how long each infection lasts and how often it is fatal. Each estimate is the middle value of 1,000 simulations. Full details are in @zacher2019.
+:::
+
+## References
+
+::: {#refs}
+:::

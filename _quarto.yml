@@ -1,17 +1,24 @@
 project:
   type: website
-
+  output-dir: docs
 website:
-  title: "blog-template"
+  site-url: "https://etc5523-2026.github.io/etc5523-assignment-3-vnay0004/"
+  title: "Vaishnav's Take On Data"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/etc5523-2022
+        href: https://github.com/vnay0004
+        aria-label: GitHub
+  page-footer:
+    center: "© 2026 Vaishnav Nayak · Built with Quarto"
+
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
+    toc: true
+    code-fold: true
 
 
 
