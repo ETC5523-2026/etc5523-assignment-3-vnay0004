@@ -1,5 +1,5 @@
 ---
-title: "Vaishnav's Data Stories"
+title: "Vaishnav's Take On Data"
 listing:
   contents: posts
   sort: "date desc"
