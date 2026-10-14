@@ -1,4 +1,47 @@
-/* css styles */
-.navbar-dark, .quarto-title-banner {
-  background-color: #006DAE;
+:root {
+  --page-bg: #fbf9f4;
+  --ink:     #222222;
+  --heading: #1f4e5f;
+  --accent:  #b5482a;
+  --muted:   #5c6670;
+  --card-bg: #ffffff;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+h1, h2, h3, .quarto-title .title {
+  color: var(--heading);
+}
+
+a { color: var(--accent); }
+a:hover, a:focus { color: var(--heading); }
+
+.finding {
+  border-left: 6px solid var(--accent);
+  background-color: var(--card-bg);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+}
+.finding p { font-size: 1.1rem; margin-bottom: 0; }
+
+.methods-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid #d9d4c7;
+  padding-top: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.quarto-listing .quarto-post {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.quarto-title-banner .title {
+  color: #ffffff;
 }

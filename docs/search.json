@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "Hi, I’m Vaishnav Nayak, a Master of Business Analytics student at Monash University in Melbourne. I enjoy turning data into clear, practical stories that people outside data roles can understand and act on.\nBefore Monash, I completed a B.Tech in Computer Science and Engineering at REVA University, Bengaluru. During my degree, I was the Vice President and a Founding Member of the FACE Forum, where I organised events ranging from technical, sports, theatre and music to community outreach. After graduating, I worked as a Product Technical Analyst at Zycus, where I worked with clients on procurement software, gathered requirements and ran training sessions on new releases. These roles taught me that good work only matters if it’s communicated well, whether that’s to a room full of students or a client.\nOutside study, I love playing football, basketball, pickleball and CrossFit, and I’ve volunteered with Spark A Foundation mentoring underprivileged children."
+  },
+  {
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "About me",
+    "section": "Skills",
+    "text": "Skills\nData & analytics: R (tidyverse, ggplot2), SQL, Excel, Quarto\nTools: Git & GitHub, Canva\nCertifications: Google Data Analytics Professional Certificate\nLanguages: English, Hindi, Odia"
+  },
+  {
+    "objectID": "posts/hospital_infections/index.html",
+    "href": "posts/hospital_infections/index.html",
+    "title": "Fewer infections per patient, yet Germany loses more healthy years",
+    "section": "",
+    "text": "Patients in German hospitals were less likely to pick up an infection than the European average. Yet, for every 100,000 people, Germany lost more healthy years to these infections: 308 versus 290."
+  },
+  {
+    "objectID": "posts/hospital_infections/index.html#the-puzzle",
+    "href": "posts/hospital_infections/index.html#the-puzzle",
+    "title": "Fewer infections per patient, yet Germany loses more healthy years",
+    "section": "The puzzle",
+    "text": "The puzzle\nWhen you go into hospital, there is a small chance you will catch an infection that you did not have when you arrived. Doctors call these healthcare-associated infections. They include pneumonia, urinary tract infections and infections of a surgical wound. Most people recover, but some become seriously ill and some die.\nTo compare harm fairly, researchers use a measure called healthy years lost. It adds up the years people lose by dying early and the years they spend living with illness. One healthy year lost is one year of full health that someone did not get to live.\nThis post answers two questions:\n\nWhich hospital infections cause the most harm?\nHow can Germany have fewer infections per patient but more harm overall?"
+  },
+  {
+    "objectID": "posts/hospital_infections/index.html#where-the-numbers-come-from",
+    "href": "posts/hospital_infections/index.html#where-the-numbers-come-from",
+    "title": "Fewer infections per patient, yet Germany loses more healthy years",
+    "section": "Where the numbers come from",
+    "text": "Where the numbers come from\nThe figures come from a study by Zacher et al. (2019), published in the European public-health journal Eurosurveillance. The researchers used hospital surveys from 2011 and 2012, in which staff checked every patient on a single day for infections picked up in hospital. They compared a representative sample of German hospitals with the average across the European Union and European Economic Area (EU/EEA).\nThe study covers five common hospital infections. The researchers built a free tool that turns these one-day snapshots into yearly estimates of cases, deaths and healthy years lost."
+  },
+  {
+    "objectID": "posts/hospital_infections/index.html#not-all-infections-are-equally-harmful",
+    "href": "posts/hospital_infections/index.html#not-all-infections-are-equally-harmful",
+    "title": "Fewer infections per patient, yet Germany loses more healthy years",
+    "section": "Not all infections are equally harmful",
+    "text": "Not all infections are equally harmful\nTable 1 shows the estimated yearly toll in Germany. The most common infection is not the most harmful one.\n\n\n\n\nTable 1: Estimated hospital infections in Germany each year (2011), sorted from most to least harmful. Source: Zacher et al. (2019).\n\n\n\n\n\n\n\n\n\n\n\n\n\nInfection\nCases per year\nDeaths per year\nShare of all cases\nShare of healthy years lost\n\n\n\n\nPneumonia\n106,586\n3,968\n22%\n28%\n\n\nUrinary tract infection\n214,150\n3,664\n45%\n27%\n\n\nBloodstream infection\n26,976\n3,905\n6%\n23%\n\n\nSurgical wound infection\n93,222\n2,328\n19%\n12%\n\n\nC. difficile (gut) infection\n36,002\n1,917\n8%\n8%\n\n\n\n\n\n\n\n\nUrinary tract infections are the most common, making up almost half of all cases (45%). But they are usually mild, so they account for only about a quarter of healthy years lost (27%).\nPneumonia and bloodstream infections are the opposite. Together they are only 28% of cases, but they cause 51% of all healthy years lost. A bloodstream infection is rare, yet it is one of the deadliest."
+  },
+  {
+    "objectID": "posts/hospital_infections/index.html#germany-versus-europe",
+    "href": "posts/hospital_infections/index.html#germany-versus-europe",
+    "title": "Fewer infections per patient, yet Germany loses more healthy years",
+    "section": "Germany versus Europe",
+    "text": "Germany versus Europe\nFigure 1 compares Germany with the EU/EEA average for each infection, per 100,000 people.\n\n\n\n\n\n\n\n\nFigure 1: Healthy years lost per 100,000 people each year, Germany compared with the EU/EEA average, 2011–12. Source: Zacher et al. (2019).\n\n\n\n\n\nTwo infections stand out. Germany loses far more healthy years than the European average to urinary tract infections (83 versus 57) and to C. difficile gut infections (26 versus 10). It does better on pneumonia (86 versus 110). The other two infections are close to the average.\nAdded together, Germany loses about 308 healthy years per 100,000 people each year, compared with 290 across the EU/EEA."
+  },
+  {
+    "objectID": "posts/hospital_infections/index.html#why-would-safer-hospitals-lead-to-more-harm",
+    "href": "posts/hospital_infections/index.html#why-would-safer-hospitals-lead-to-more-harm",
+    "title": "Fewer infections per patient, yet Germany loses more healthy years",
+    "section": "Why would safer hospitals lead to more harm?",
+    "text": "Why would safer hospitals lead to more harm?\nThe researchers point to how often Germans go to hospital. Germany has more hospital beds per person than most European countries, and a larger share of its population is admitted to hospital each year.\nThink of it like this: if each hospital stay carries a slightly smaller risk, but many more people have a hospital stay, the total number of people harmed can still be higher. The study does not test this explanation directly, but it fits the pattern in the data.\n\nLower risk for each patient does not guarantee less harm overall. How many people go to hospital matters too."
+  },
+  {
+    "objectID": "posts/hospital_infections/index.html#so-what-are-the-answers",
+    "href": "posts/hospital_infections/index.html#so-what-are-the-answers",
+    "title": "Fewer infections per patient, yet Germany loses more healthy years",
+    "section": "So, what are the answers?",
+    "text": "So, what are the answers?\n\nWhich hospital infections cause the most harm? Pneumonia and bloodstream infections. They are less common than urinary tract infections but much more likely to be serious or fatal (Table 1).\nHow can Germany have fewer infections per patient but more harm overall? Germany has more hospital stays per person. More stays mean more chances for infection, even when each stay is a little safer. The extra harm comes mainly from urinary tract and C. difficile infections (Figure 1).\n\n\n\n\n\n\n\nNoteWhat this data can’t tell us\n\n\n\nThese numbers are estimates, not counts. They are built from a one-day snapshot of hospital patients, scaled up to a whole year with a computer model, so the true values could be somewhat higher or lower. The data are also from 2011–12, so hospitals today may look different. And the comparison assumes German patients were about as sick as patients elsewhere in Europe."
+  },
+  {
+    "objectID": "posts/hospital_infections/index.html#the-bottom-line",
+    "href": "posts/hospital_infections/index.html#the-bottom-line",
+    "title": "Fewer infections per patient, yet Germany loses more healthy years",
+    "section": "The bottom line",
+    "text": "The bottom line\nWe started with a puzzle: how can a country with fewer infections per hospital patient lose more healthy years to those infections? The answer is scale. Germany’s hospitals were slightly safer per patient, but Germany puts more people through hospital, so the total harm was higher: 308 versus 290 healthy years lost per 100,000 people.\nThe type of infection matters too. Common, mild infections such as urinary tract infections make up most cases, but rarer, more serious infections such as pneumonia and bloodstream infections cause half of the harm. This matches earlier European research, which found that hospital infections together cause more harm than many better-known infectious diseases (Cassini et al. 2016).\nFor anyone thinking about hospital safety, the lesson is simple: look at both how risky each hospital stay is and how many hospital stays there are.\n\nAbout the data. Estimates come from the German national point prevalence survey (2011) and the European Centre for Disease Prevention and Control’s EU/EEA survey (2011–12). The researchers’ tool, BHAI, converts the share of patients with an infection on the survey day into yearly new cases, spreads them across age and sex groups, and applies published information on how long each infection lasts and how often it is fatal. Each estimate is the middle value of 1,000 simulations. Full details are in Zacher et al. (2019)."
+  },
+  {
+    "objectID": "posts/hospital_infections/index.html#references",
+    "href": "posts/hospital_infections/index.html#references",
+    "title": "Fewer infections per patient, yet Germany loses more healthy years",
+    "section": "References",
+    "text": "References\n\n\nCassini, Alessandro, Diamantis Plachouras, Tim Eckmanns, et al. 2016. “Burden of Six Healthcare-Associated Infections on European Population Health: Estimating Incidence-Based Disability-Adjusted Life Years Through a Population Prevalence-Based Modelling Study.” PLoS Medicine 13 (10): e1002150. https://doi.org/10.1371/journal.pmed.1002150.\n\n\nZacher, Benedikt, Sebastian Haller, Niklas Willrich, et al. 2019. “Application of a New Methodology and R Package Reveals a High Burden of Healthcare-Associated Infections (HAI) in Germany Compared to the Average in the European Union/European Economic Area, 2011 to 2012.” Eurosurveillance 24 (46): 1900135. https://doi.org/10.2807/1560-7917.ES.2019.24.46.1900135."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Vaishnav’s Data Stories",
+    "section": "",
+    "text": "Fewer infections per patient, yet Germany loses more healthy years\n\n\nWhat a study of hospital infections in Germany and Europe reveals\n\n\n\nhealth\n\nhospitals\n\nEurope\n\n\n\n\n\n\n\n\n\nOct 14, 2026\n\n\nVaishnav Nayak\n\n\n\n\n\nNo matching items"
+  }
+]

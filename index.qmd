@@ -1,5 +1,5 @@
 ---
-title: "ETC5523 Blog Assessment"
+title: "Vaishnav's Data Stories"
 listing:
   contents: posts
   sort: "date desc"
